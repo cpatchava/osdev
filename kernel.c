@@ -34,6 +34,7 @@ enum vga_color
 	COLOR_LIGHT_BROWN = 14,
 	COLOR_WHITE = 15,
 };
+
  
 uint8_t make_color(enum vga_color fg, enum vga_color bg)
 {
