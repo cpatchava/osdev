@@ -3,7 +3,7 @@
 #endif
 #include <stddef.h>
 #include <stdint.h>
- 
+#include "system.h" 
 /* Check if the compiler thinks if we are targeting the wrong operating system. */
 #if defined(__linux__)
 #error "You are not using a cross-compiler, you will most certainly run into trouble"
@@ -131,12 +131,6 @@ unsigned short *memsetw(unsigned short *dest, unsigned short val, int count)
     *  unsigned short */
 }
 
-int strlen(const char *str)
-{
-    /* This loops through character array 'str', returning how
-    *  many characters it needs to check before it finds a 0.
-    *  In simple words, it returns the length in bytes of a string */
-}
 
 /* We will use this later on for reading from the I/O ports to get data
 *  from devices such as the keyboard. We are using what is called
@@ -162,8 +156,10 @@ extern "C" /* Use C linkage for kernel_main. */
 #endif
 void kernel_main()
 {
-	terminal_initialize();
+	//terminal_initialize();
+	init_video();
 	/* Since there is no support for newlines in terminal_putchar yet, \n will
 	   produce some VGA specific character instead. This is normal. */
-	terminal_writestring("Welcome to Chaitanyas Operating System!!!\n");
+	//terminal_writestring("Welcome asdjkfhasldkjh to Chaitanyas Operating System!!!\n");
+	puts("Welcome to Chaitanyas Operating System!!!\n");
 }
