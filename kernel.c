@@ -156,10 +156,11 @@ extern "C" /* Use C linkage for kernel_main. */
 #endif
 void kernel_main()
 {
+	gdt_install();
 	//terminal_initialize();
 	init_video();
 	/* Since there is no support for newlines in terminal_putchar yet, \n will
 	   produce some VGA specific character instead. This is normal. */
 	//terminal_writestring("Welcome asdjkfhasldkjh to Chaitanyas Operating System!!!\n");
-	puts("Welcome to Chaitanyas Operating System!!!\n");
+	puts("Welcomehello  to Chaitanyas Operating System!!!\n");
 }
